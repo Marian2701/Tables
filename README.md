@@ -22,30 +22,47 @@
 
 Шаг 1:
 Справочник 1: TILE_COMPANY  - Компания по производству плиток.
+
 Колонки:
 
 TC_ID        SERIAL PRIMARY KEY,
+
 TC_NAME      VARCHAR(40) NOT NULL,
+
 TC_DATE      DATE        NOT NULL,
+
 TC_INCOME    NUMERIC(10, 2),
+
 TC_STAFF     INT,
+
 TC_COMMENT   VARCHAR(150),
+
 TC_IS_ENABLE INT DEFAULT (1)
 
 Справочник 2: TILES  - Плитка.
+
 Колонки:
 
 TIL_ID        SERIAL PRIMARY KEY,
+
 TIL_NAME      VARCHAR(40) NOT NULL,
+
 TIL_SIZE      INT         NOT NULL,
+
 TIL_PRICE     NUMERIC(10, 2),
+
 TIL_DATE      DATE        NOT NULL,
+
 TC_REFID      INT,
+
 TIL_COMMENT   VARCHAR(150),
+
 TIL_IS_ENABLE INT DEFAULT (1)
 
 Шаг2:
+
 1) Postgresql
+
 2) CREATE TABLE TILE_COMPANY
 (
     TC_ID        SERIAL PRIMARY KEY,
