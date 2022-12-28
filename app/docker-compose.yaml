@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: maryanmak/postgres-simple-tables
+    environment:
+      POSTGRES_PASSWORD: 12345
+    volumes:
+      - ./psql-data/data:/var/lib/postgresql/data
+    ports:
+      - 54328:5432
+
+  app:
+    image: maryanmak/python-flask-simple-tables
+    restart: always
+    ports:
+      - 5001:5001
